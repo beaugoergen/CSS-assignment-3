@@ -8,16 +8,21 @@ html {
     box-sizing: inherit; /* keep */
 }
 body {
-    font-family: sans-serif;
+    font-family: "Lato", Verdana, Geneva, sans-serif;
     background: #5598b2; /* keep */
     color: #333; /* keep */
     margin: 0; /* keep */
 }
 h1, h2 {
-    font-family: serif;
+    font-family: "Playfair Display SC", Georgia, "Times New Roman", serif;
+}
+h1  {
+    text-align: center;
+    font-weight: bolder;
 }
 #tagline {
     font-style: italic;
+    text-align: center;
 }
 /* all images will stretch to fill their containing element */
 img {
@@ -37,11 +42,14 @@ img {
     max-width: 1280px; /* keep */
     margin: auto; /* keep */
     display: grid; /* keep */
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 24.24% 20.12% 24.24% 28.36% 3%;
     grid-template-areas:
-        "header arial georgia pairing bobwhite-quail"
-        "readability line-length helvetica typeface footer";
+        "header header header"
+        "pairing arial georgia"
+        "bobwhite-quail readability line-length"
+        "typeface typeface helvetica"
+        "footer footer footer";
 }
 
 /* all grid items -
@@ -57,39 +65,71 @@ header {
 #arial {
     grid-area: arial; /* keep */
     background: #a8e8ff; /* keep */
+    padding-top: 2em;
+    padding-bottom: 2em;
+    padding-right: 1em;
+    padding-left: 2em;
 }
 #georgia {
     grid-area: georgia; /* keep */
     background: #a8e8ff; /* keep */
+    padding-top: 2em;
+    padding-bottom: 20em;
+    padding-left: 1em;
+    padding-right: 2em;
 }
 #pairing {
     grid-area: pairing; /* keep */
     background: #a8e8ff; /* keep */
+    margin-top: 0em;
+    margin-bottom: 0em;
+    padding-top: 2em;
+    padding-left: 2em;
+    font-size: 14pt;
 }
 #bobwhite-quail {
     grid-area: bobwhite-quail; /* keep */
     background: #d2f4ff; /* keep */
+    padding-top: 4em;
+    padding-bottom: 8em;
+    padding-left: 2em;
+    padding-right: 2em;
 }
 #readability {
     grid-area: readability; /* keep */
     background: #d2f4ff; /* keep */
+    padding-top: 2em;
+    padding-right: 1em;
 }
 #line-length {
     grid-area: line-length; /* keep */
     background: #d2f4ff; /* keep */
+    padding-top: 2em;
+    padding-left: 1em;
+    padding-right: 2em;
 }
 #helvetica {
     grid-area: helvetica; /* keep */
     background: #fff; /* keep */
+    margin-bottom: auto;
+    margin-top: 4em;
+    padding: 2em;
+    margin-left: 2em;
+    margin-right: 2em;
 }
 #typeface {
     grid-area: typeface; /* keep */
     color: #d2f4ff; /* keep */
     background: #5598b2; /* keep */
+    padding-right: 10em;
+    padding-top: 2em;
+    text-shadow: 1px 1px #ffdf80;
 }
 footer {
     grid-area: footer; /* keep */
     background: #b2988a; /* keep */
+    align-self: center;
+    text-align: center;
 }
 
 /* end of all 10 grid items */
@@ -105,3 +145,13 @@ a:hover {
 }
 
 /* media queries below - only 1 is needed */
+
+@media screen and (max-width: 830px){
+    #container {
+      grid-template-columns: 1;
+      grid-template-rows: repeat(8, 1fr);
+    }
+    header {
+      display: none;
+    }
+}
